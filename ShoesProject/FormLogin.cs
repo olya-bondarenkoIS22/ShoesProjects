@@ -5,7 +5,7 @@ namespace ShoesProject
     public partial class FormLogin : System.Windows.Forms.Form
     {
         public User CurrentUser { get; private set; }
-        public bool IsQuest { get; private set; }
+        public bool IsGuest { get; private set; }
         public FormLogin()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace ShoesProject
                 if (user != null)
                 {
                     CurrentUser = user;
-                    IsQuest = false;
+                    IsGuest = false;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -45,7 +45,7 @@ namespace ShoesProject
         private void BtnQuest_Click(object sender, EventArgs e)
         {
             CurrentUser = null;
-            IsQuest = true;
+            IsGuest = true;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

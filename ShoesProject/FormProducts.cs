@@ -8,7 +8,7 @@ namespace ShoesProject
     {
 
         public User CurrentUser { get; private set; }
-        public bool IsQuest { get; private set; }
+        public bool IsGuest { get; private set; }
 
         public FormProducts(User user, bool quest)
         {
@@ -36,9 +36,9 @@ namespace ShoesProject
             ]);
 
             CurrentUser = user;
-            IsQuest = quest;
+            IsGuest = quest;
 
-            lblUserName.Text = IsQuest ? "Гость" : CurrentUser.FullName;
+            lblUserName.Text = IsGuest ? "Гость" : CurrentUser.FullName;
 
             LoadProducts();
         }
@@ -53,6 +53,7 @@ namespace ShoesProject
                         .Include(i => i.Manufacturer)
                         .Include(i => i.Supplier)
                         .Include(i => i.Measure)
+                        .Include(i => i.ProductType)
                         .ToList();
 
                     dgvProducts.SuspendLayout();
@@ -72,6 +73,9 @@ namespace ShoesProject
 
                         ApplyRowStyles(row, product);
                     }
+
+                    dgvProducts.ResumeLayout();
+                    dgvProducts.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
                 }
             }
             catch (Exception ex)
