@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelTop = new Panel();
-            dgvProducts = new DataGridView();
-            btnLogin = new Button();
             lblUserName = new Label();
+            btnLogut = new Button();
+            dgvProducts = new DataGridView();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
@@ -40,53 +40,13 @@
             // panelTop
             // 
             panelTop.Controls.Add(lblUserName);
-            panelTop.Controls.Add(btnLogin);
+            panelTop.Controls.Add(btnLogut);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(10, 10);
             panelTop.Name = "panelTop";
             panelTop.Padding = new Padding(0, 0, 0, 10);
             panelTop.Size = new Size(962, 40);
             panelTop.TabIndex = 0;
-            // 
-            // dgvProducts
-            // 
-            dgvProducts.AllowUserToAddRows = false;
-            dgvProducts.AllowUserToDeleteRows = false;
-            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvProducts.BackgroundColor = Color.White;
-            dgvProducts.BorderStyle = BorderStyle.None;
-            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvProducts.Dock = DockStyle.Fill;
-            dgvProducts.Location = new Point(10, 50);
-            dgvProducts.MultiSelect = false;
-            dgvProducts.Name = "dgvProducts";
-            dgvProducts.ReadOnly = true;
-            dgvProducts.RowHeadersVisible = false;
-            dgvProducts.RowHeadersWidth = 51;
-            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(962, 593);
-            dgvProducts.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.MediumSpringGreen;
-            btnLogin.Dock = DockStyle.Right;
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Location = new Point(812, 0);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(150, 30);
-            btnLogin.TabIndex = 6;
-            btnLogin.Text = "Войти";
-            btnLogin.UseVisualStyleBackColor = false;
             // 
             // lblUserName
             // 
@@ -98,6 +58,47 @@
             lblUserName.TabIndex = 7;
             lblUserName.Text = "label1";
             lblUserName.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnLogut
+            // 
+            btnLogut.BackColor = Color.MediumSpringGreen;
+            btnLogut.Dock = DockStyle.Right;
+            btnLogut.FlatAppearance.BorderSize = 0;
+            btnLogut.FlatStyle = FlatStyle.Flat;
+            btnLogut.Location = new Point(812, 0);
+            btnLogut.Name = "btnLogut";
+            btnLogut.Size = new Size(150, 30);
+            btnLogut.TabIndex = 6;
+            btnLogut.Text = "Выход";
+            btnLogut.UseVisualStyleBackColor = false;
+            btnLogut.Click += BtnLogut_Click;
+            // 
+            // dgvProducts
+            // 
+            dgvProducts.AllowUserToAddRows = false;
+            dgvProducts.AllowUserToDeleteRows = false;
+            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvProducts.BackgroundColor = Color.White;
+            dgvProducts.BorderStyle = BorderStyle.None;
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle1;
+            dgvProducts.Dock = DockStyle.Fill;
+            dgvProducts.Location = new Point(10, 50);
+            dgvProducts.MultiSelect = false;
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.ReadOnly = true;
+            dgvProducts.RowHeadersVisible = false;
+            dgvProducts.RowHeadersWidth = 51;
+            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProducts.Size = new Size(962, 593);
+            dgvProducts.TabIndex = 1;
             // 
             // FormProducts
             // 
@@ -124,6 +125,6 @@
         private Panel panelTop;
         private DataGridView dgvProducts;
         private Label lblUserName;
-        private Button btnLogin;
+        private Button btnLogut;
     }
 }
