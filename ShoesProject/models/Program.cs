@@ -1,4 +1,4 @@
-namespace ShoesProject
+namespace ShoesProject.models
 {
     internal static class Program
     {
