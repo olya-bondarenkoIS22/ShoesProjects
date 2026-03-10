@@ -77,9 +77,12 @@
             // 
             // dgvOrders
             // 
+            dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrders.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvOrders.BackgroundColor = Color.White;
             dgvOrders.BorderStyle = BorderStyle.None;
             dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrders.ColumnHeadersVisible = false;
             dgvOrders.Dock = DockStyle.Fill;
             dgvOrders.Location = new Point(14, 55);
             dgvOrders.Margin = new Padding(4, 3, 4, 3);
