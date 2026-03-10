@@ -106,6 +106,7 @@ namespace ShoesProject
             {
                 row.DefaultCellStyle.BackColor = Color.LightBlue;
                 row.Cells["colStatus"].Style.ForeColor = Color.Blue;
+                row.Cells["colCode"].Style.ForeColor = Color.Red;
             }
             
             row.Cells["colStatus"].Style.Font = new Font(
