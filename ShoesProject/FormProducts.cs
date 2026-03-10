@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 using ShoesProject.models;
 using ShoesProject.Properties;
 
@@ -7,10 +8,10 @@ namespace ShoesProject
     public partial class FormProducts : Form
     {
 
-        public User CurrentUser { get; private set; }
+        public models.User CurrentUser { get; private set; }
         public bool IsGuest { get; private set; }
 
-        public FormProducts(User user, bool quest)
+        public FormProducts(models.User user, bool quest)
         {
             InitializeComponent();
 
@@ -38,6 +39,10 @@ namespace ShoesProject
             CurrentUser = user;
             IsGuest = quest;
 
+            if(IsGuest)
+            {
+                btnOrder.Enabled = false;
+            }
             lblUserName.Text = IsGuest ? "Гость" : CurrentUser.FullName;
 
             LoadProducts();
@@ -154,6 +159,15 @@ namespace ShoesProject
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+        }
+
+        private void BtnOrder_Click(object sender, EventArgs e)
+        {
+            if (!IsGuest)
+            {
+                FormOrders ordersForm = new FormOrders(CurrentUser, IsGuest);
+                ordersForm.ShowDialog();
+            }
         }
     }
 }
